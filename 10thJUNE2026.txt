@@ -1,0 +1,954 @@
+
+
+***No access from Secondary Server:***
+
+
+
+
+
+
+
+> db. students. insertOne ({
+
+
+
+name: "Jiya",
+
+course: "MongoDB"
+
+
+
+})
+
+
+
+"MongoServerError\[NotWritablePrimary]: not primary
+
+myReplSet \[direct: secondary] college> |
+
+rs.initiate({
+
+&#x20; \_id: "myReplSet",
+
+&#x20; members: \[
+
+&#x20;   { \_id: 0, host: "localhost:27017" },
+
+&#x20;   { \_id: 1, host: "localhost:27018" },
+
+&#x20;   { \_id: 2, host: "localhost:27019" }
+
+&#x20; ]
+
+})
+
+{
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781096104, i: 1 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781096104, i: 1 })
+
+}
+
+rs.status()
+
+{
+
+&#x20;     lastHeartbeatMessage: ''
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 1,
+
+&#x20;     name: 'localhost:27018',
+
+&#x20;     health: 1,
+
+&#x20;     state: 2,
+
+&#x20;     stateStr: 'SECONDARY',
+
+&#x20;     uptime: 19,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeDurable: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     optimeDurableDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     optimeWrittenDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastHeartbeat: 2026-06-10T12:55:24.467Z,
+
+&#x20;     lastHeartbeatRecv: 2026-06-10T12:55:23.630Z,
+
+&#x20;     pingMs: Long('1'),
+
+&#x20;     lastHeartbeatMessage: '',
+
+&#x20;     syncSourceHost: 'localhost:27017',
+
+&#x20;     syncSourceId: 0,
+
+&#x20;     infoMessage: '',
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 1
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 2,
+
+&#x20;     name: 'localhost:27019',
+
+&#x20;     health: 1,
+
+&#x20;     state: 2,
+
+&#x20;     stateStr: 'SECONDARY',
+
+&#x20;     uptime: 19,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeDurable: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096116, i: 17 }), t: Long('1') },
+
+&#x20;     optimeDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     optimeDurableDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     optimeWrittenDate: 2026-06-10T12:55:16.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T12:55:16.811Z,
+
+&#x20;     lastHeartbeat: 2026-06-10T12:55:24.467Z,
+
+&#x20;     lastHeartbeatRecv: 2026-06-10T12:55:23.677Z,
+
+&#x20;     pingMs: Long('0'),
+
+&#x20;     lastHeartbeatMessage: '',
+
+&#x20;     syncSourceHost: 'localhost:27017',
+
+&#x20;     syncSourceId: 0,
+
+&#x20;     infoMessage: '',
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 1
+
+&#x20;   }
+
+&#x20; ],
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781096116, i: 17 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781096116, i: 17 })
+
+}
+
+use college
+
+switched to db college
+
+db.students.insertOne({
+
+&#x20; name: "Jiya",
+
+&#x20; course: "MongoDB"
+
+})
+
+
+
+
+
+
+
+
+
+use college
+
+switched to db college
+
+db.students.find()
+
+{
+
+&#x20; \_id: ObjectId('6a295efddc1da88011b18031'),
+
+&#x20; name: 'Jiya',
+
+&#x20; course: 'MongoDB'
+
+}
+
+rs.status()
+
+{
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 1,
+
+&#x20;     name: 'localhost:27018',
+
+&#x20;     health: 1,
+
+&#x20;     state: 1,
+
+&#x20;     stateStr: 'PRIMARY',
+
+&#x20;     uptime: 381,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096326, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDate: 2026-06-10T12:58:46.000Z,
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096326, i: 1 }), t: Long('2') },
+
+&#x20;     optimeWrittenDate: 2026-06-10T12:58:46.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     syncSourceHost: '',
+
+&#x20;     syncSourceId: -1,
+
+&#x20;     infoMessage: '',
+
+&#x20;     electionTime: Timestamp({ t: 1781096306, i: 1 }),
+
+&#x20;     electionDate: 2026-06-10T12:58:26.000Z,
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2,
+
+&#x20;     self: true,
+
+&#x20;     lastHeartbeatMessage: ''
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 2,
+
+&#x20;     name: 'localhost:27019',
+
+&#x20;     health: 1,
+
+&#x20;     state: 2,
+
+&#x20;     stateStr: 'SECONDARY',
+
+&#x20;     uptime: 228,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096326, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDurable: { ts: Timestamp({ t: 1781096326, i: 1 }), t: Long('2') },
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096326, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDate: 2026-06-10T12:58:46.000Z,
+
+&#x20;     optimeDurableDate: 2026-06-10T12:58:46.000Z,
+
+&#x20;     optimeWrittenDate: 2026-06-10T12:58:46.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T12:58:46.691Z,
+
+&#x20;     lastHeartbeat: 2026-06-10T12:58:52.928Z,
+
+&#x20;     lastHeartbeatRecv: 2026-06-10T12:58:52.833Z,
+
+&#x20;     pingMs: Long('2'),
+
+&#x20;     lastHeartbeatMessage: '',
+
+&#x20;     syncSourceHost: 'localhost:27018',
+
+&#x20;     syncSourceId: 1,
+
+&#x20;     infoMessage: '',
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2
+
+&#x20;   }
+
+&#x20; ],
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781096326, i: 1 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781096326, i: 1 })
+
+}
+
+rs.status()
+
+{
+
+&#x20;     infoMessage: '',
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 1,
+
+&#x20;     name: 'localhost:27018',
+
+&#x20;     health: 1,
+
+&#x20;     state: 1,
+
+&#x20;     stateStr: 'PRIMARY',
+
+&#x20;     uptime: 780,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096727, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDate: 2026-06-10T13:05:27.000Z,
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096727, i: 1 }), t: Long('2') },
+
+&#x20;     optimeWrittenDate: 2026-06-10T13:05:27.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     syncSourceHost: '',
+
+&#x20;     syncSourceId: -1,
+
+&#x20;     infoMessage: '',
+
+&#x20;     electionTime: Timestamp({ t: 1781096306, i: 1 }),
+
+&#x20;     electionDate: 2026-06-10T12:58:26.000Z,
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2,
+
+&#x20;     self: true,
+
+&#x20;     lastHeartbeatMessage: ''
+
+&#x20;   },
+
+&#x20;   {
+
+&#x20;     \_id: 2,
+
+&#x20;     name: 'localhost:27019',
+
+&#x20;     health: 1,
+
+&#x20;     state: 2,
+
+&#x20;     stateStr: 'SECONDARY',
+
+&#x20;     uptime: 628,
+
+&#x20;     optime: { ts: Timestamp({ t: 1781096727, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDurable: { ts: Timestamp({ t: 1781096727, i: 1 }), t: Long('2') },
+
+&#x20;     optimeWritten: { ts: Timestamp({ t: 1781096727, i: 1 }), t: Long('2') },
+
+&#x20;     optimeDate: 2026-06-10T13:05:27.000Z,
+
+&#x20;     optimeDurableDate: 2026-06-10T13:05:27.000Z,
+
+&#x20;     optimeWrittenDate: 2026-06-10T13:05:27.000Z,
+
+&#x20;     lastAppliedWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     lastDurableWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     lastWrittenWallTime: 2026-06-10T13:05:27.272Z,
+
+&#x20;     lastHeartbeat: 2026-06-10T13:05:32.465Z,
+
+&#x20;     lastHeartbeatRecv: 2026-06-10T13:05:32.431Z,
+
+&#x20;     pingMs: Long('2'),
+
+&#x20;     lastHeartbeatMessage: '',
+
+&#x20;     syncSourceHost: 'localhost:27018',
+
+&#x20;     syncSourceId: 1,
+
+&#x20;     infoMessage: '',
+
+&#x20;     configVersion: 1,
+
+&#x20;     configTerm: 2
+
+&#x20;   }
+
+&#x20; ],
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781096727, i: 1 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781096727, i: 1 })
+
+}
+
+db.students.drop()
+
+true
+
+db.students.insertOne({
+
+&#x20; name: "Jiya",
+
+&#x20; course: "MongoDB"
+
+})
+
+
+
+
+
+
+
+SHARDING
+
+
+
+
+sh.addShard("shard1ReplSet/localhost:27011")
+
+{
+
+&#x20; shardAdded: 'shard1ReplSet',
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781101088, i: 10 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781101088, i: 10 })
+
+}
+
+sh.addShard("shard2ReplSet/localhost:27012")
+
+{
+
+&#x20; shardAdded: 'shard2ReplSet',
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781101095, i: 23 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781101095, i: 23 })
+
+}
+
+sh.enableSharding("eCommerceDB")
+
+{
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781101104, i: 5 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781101104, i: 5 })
+
+}
+
+sh.shardCollection(
+
+&#x20; "eCommerceDB.orders",
+
+&#x20; { customer\_id: "hashed" }
+
+)
+
+{
+
+&#x20; collectionsharded: 'eCommerceDB.orders',
+
+&#x20; ok: 1,
+
+&#x20; '$clusterTime': {
+
+&#x20;   clusterTime: Timestamp({ t: 1781101114, i: 51 }),
+
+&#x20;   signature: {
+
+&#x20;     hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+
+&#x20;     keyId: Long('0')
+
+&#x20;   }
+
+&#x20; },
+
+&#x20; operationTime: Timestamp({ t: 1781101114, i: 47 })
+
+}
+
+use eCommerceDB
+
+switched to db eCommerceDB
+
+for(let i=0;i<1000;i++){
+
+&#x20; db.orders.insertOne({
+
+&#x20;   customer\_id: "cust\_"+i,
+
+&#x20;   amount: Math.random()\*100
+
+&#x20; })
+
+}
+
+{
+
+&#x20; acknowledged: true,
+
+&#x20; insertedId: ObjectId('6a297284b262909b9a512060')
+
+}
+
+sh.status()
+
+shardingVersion
+
+{
+
+&#x20; \_id: ObjectId('6a2970f12fbc5c480d5584f5'),
+
+&#x20; clusterId: ObjectId('6a2970f12fbc5c480d5584f4')
+
+}
+
+shards
+
+\[
+
+&#x20; {
+
+&#x20;   \_id: 'shard1ReplSet',
+
+&#x20;   host: 'shard1ReplSet/localhost:27011',
+
+&#x20;   topologyTime: Timestamp({ t: 1781101087, i: 32 }),
+
+&#x20;   replSetConfigVersion: -1
+
+&#x20; },
+
+&#x20; {
+
+&#x20;   \_id: 'shard2ReplSet',
+
+&#x20;   host: 'shard2ReplSet/localhost:27012',
+
+&#x20;   topologyTime: Timestamp({ t: 1781101094, i: 33 }),
+
+&#x20;   replSetConfigVersion: -1
+
+&#x20; }
+
+]
+
+active mongoses
+
+\[
+
+&#x20; {
+
+&#x20;   '8.3.2': 1
+
+&#x20; }
+
+]
+
+autosplit
+
+{
+
+&#x20; 'Currently enabled': 'yes'
+
+}
+
+balancer
+
+{
+
+&#x20; 'Currently enabled': 'yes',
+
+&#x20; 'Currently running': 'no',
+
+&#x20; 'Failed balancer rounds in last 5 attempts': 0,
+
+&#x20; 'Migration Results for the last 24 hours': 'No recent migrations'
+
+}
+
+shardedDataDistribution
+
+\[
+
+&#x20; {
+
+&#x20;   ns: 'eCommerceDB.orders',
+
+&#x20;   shards: \[
+
+&#x20;     {
+
+&#x20;       shardName: 'shard1ReplSet',
+
+&#x20;       numOrphanedDocs: 0,
+
+&#x20;       numOwnedDocuments: 491,
+
+&#x20;       ownedSizeBytes: 30933,
+
+&#x20;       orphanedSizeBytes: 0
+
+&#x20;     },
+
+&#x20;     {
+
+&#x20;       shardName: 'shard2ReplSet',
+
+&#x20;       numOrphanedDocs: 0,
+
+&#x20;       numOwnedDocuments: 509,
+
+&#x20;       ownedSizeBytes: 32067,
+
+&#x20;       orphanedSizeBytes: 0
+
+&#x20;     }
+
+&#x20;   ]
+
+&#x20; }
+
+]
+
+databases
+
+&#x20;   database: {
+
+&#x20;     \_id: 'eCommerceDB',
+
+&#x20;     primary: 'shard2ReplSet',
+
+&#x20;     version: {
+
+&#x20;       uuid: UUID('baec446e-32d6-4493-a1d2-540b18b1a1ca'),
+
+&#x20;       timestamp: Timestamp({ t: 1781101103, i: 10 }),
+
+&#x20;       lastMod: 1
+
+&#x20;     }
+
+&#x20;   },
+
+&#x20;   collections: {
+
+&#x20;     'eCommerceDB.orders': {
+
+&#x20;       shardKey: {
+
+&#x20;         customer\_id: 'hashed'
+
+&#x20;       },
+
+&#x20;       unique: false,
+
+&#x20;       balancing: true,
+
+&#x20;       allowMigrations: true,
+
+&#x20;       chunkMetadata: \[
+
+&#x20;         {
+
+&#x20;           shard: 'shard1ReplSet',
+
+&#x20;           nChunks: 1
+
+&#x20;         },
+
+&#x20;         {
+
+&#x20;           shard: 'shard2ReplSet',
+
+&#x20;           nChunks: 1
+
+&#x20;         }
+
+&#x20;       ],
+
+&#x20;       chunks: \[
+
+&#x20;         {
+
+&#x20;           min: {
+
+&#x20;             customer\_id: MinKey()
+
+&#x20;           },
+
+&#x20;           max: {
+
+&#x20;             customer\_id: 0
+
+&#x20;           },
+
+&#x20;           'on shard': 'shard2ReplSet',
+
+&#x20;           'last modified': Timestamp({ t: 1, i: 0 })
+
+&#x20;         },
+
+&#x20;         {
+
+&#x20;           min: {
+
+&#x20;             customer\_id: 0
+
+&#x20;           },
+
+&#x20;           max: {
+
+&#x20;             customer\_id: MaxKey()
+
+&#x20;           },
+
+&#x20;           'on shard': 'shard1ReplSet',
+
+&#x20;           'last modified': Timestamp({ t: 1, i: 1 })
+
+&#x20;         }
+
+&#x20;       ],
+
+&#x20;       tags: \[]
+
+&#x20;     }
+
+&#x20;   }
+
+&#x20; }
+
+]
+
+db.orders.getShardDistribution()
+
+Shard shard1ReplSet at shard1ReplSet/localhost:27011
+
+{
+
+&#x20; data: '30KiB',
+
+&#x20; docs: 491,
+
+&#x20; chunks: 1,
+
+&#x20; 'estimated data per chunk': '30KiB',
+
+&#x20; 'estimated docs per chunk': 491
+
+}
+
+Shard shard2ReplSet at shard2ReplSet/localhost:27012
+
+{
+
+&#x20; data: '31KiB',
+
+&#x20; docs: 509,
+
+&#x20; chunks: 1,
+
+&#x20; 'estimated data per chunk': '31KiB',
+
+&#x20; 'estimated docs per chunk': 509
+
+}
+
+Totals
+
+{
+
+&#x20; data: '62KiB',
+
+&#x20; docs: 1000,
+
+&#x20; chunks: 2,
+
+&#x20; 'Shard shard1ReplSet': \[
+
+&#x20;   '49.09 % data',
+
+&#x20;   '49.1 % docs in cluster',
+
+&#x20;   '63B avg obj size on shard'
+
+&#x20; ],
+
+&#x20; 'Shard shard2ReplSet': \[
+
+&#x20;   '50.9 % data',
+
+&#x20;   '50.9 % docs in cluster',
+
+&#x20;   '63B avg obj size on shard'
+
+&#x20; ]
+
+}
+
+
